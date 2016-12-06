@@ -1,0 +1,30 @@
+
+{% load staticfiles %}
+
+<html>
+    <head>
+
+        <title>login</title>
+
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header" style="background: plum">
+            <h1><a href="/">LetsBlog!!!{{ user.username }}</a></h1>
+        </div>
+
+            <form method="POST">{% csrf_token %}
+
+                <div> {{ user_form.as_p }} </div>
+                <input type="submit" value="Register">
+
+
+            </form>
+        </center>
+    </body>
+</html>
+
+
+
+

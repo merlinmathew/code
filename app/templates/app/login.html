@@ -1,0 +1,42 @@
+
+{% load staticfiles %}
+{% load socialaccount %}
+
+<html>
+    <head>
+
+        <title>login</title>
+
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header" style="background: plum">
+            <h1><a href="/">LetsBlog!!!</a></h1>
+        </div>
+
+
+            <form method="POST" >{% csrf_token %}
+
+
+                            {{ form.as_p }}
+
+                    <input type="submit" value="Login">
+
+                    <div id="msgt"> <b>  {{ msg }}  </b></div>
+
+                    <a href="{% url 'register' %}"> <span><t><b>NewUser!</b></t></span></a>
+                    <a href="{% provider_login_url "facebook" method="oauth2" %}">FB Login</a>
+
+
+
+
+
+            </form>
+
+    </body>
+</html>
+
+
+
+
